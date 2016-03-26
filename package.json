@@ -1,0 +1,22 @@
+{
+  "name": "seneca-ha-nightlight",
+  "version": "1.0.0",
+  "description": "Responds to suncalculator events to turn on/off zwave lights at sunset/sunrise",
+  "main": "nightlight-service.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Seneca",
+    "Home",
+    "Automation"
+  ],
+  "author": "Mike Linnen <mlinnen@protosystem.net> (http://www.protosystem.net)",
+  "license": "MIT",
+  "dependencies": {
+    "seneca": "^2.0.0"
+  }
+}
