@@ -6,7 +6,7 @@ module.exports = function nightlight(options) {
     setInterval(function(options) {
         seneca.act({ role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124 }, function(err, result) {
             if (result.answer=='none'){
-                console.log('not time yet');
+                console.log.debug('not time yet');
             } 
             else if (result.answer=='sunrise'){
                 console.log('Lights out')
