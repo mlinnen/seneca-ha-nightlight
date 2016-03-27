@@ -1,6 +1,6 @@
 {
   "name": "seneca-ha-nightlight",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Responds to suncalculator events to turn on/off zwave lights at sunset/sunrise",
   "main": "nightlight-service.js",
   "directories": {
