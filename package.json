@@ -17,6 +17,7 @@
   "author": "Mike Linnen <mlinnen@protosystem.net> (http://www.protosystem.net)",
   "license": "MIT",
   "dependencies": {
-    "seneca": "^2.0.0"
+    "seneca": "^2.0.0",
+    "seneca-suncalculator": "^0.1.1"
   }
 }
