@@ -15,10 +15,14 @@ module.exports = function nightlight(options) {
                 this.act({ role: 'zwave', cmd: 'control_off', id: 3 });  // Family Room Lamp
                 this.act({ role: 'zwave', cmd: 'control_off', id: 10 }); // Back Porch
                 this.act({ role: 'zwave', cmd: 'control_off', id: 4 });  // Front Porch
+                this.act({ role: 'lifx', cmd: 'light_off', id: 'Family Room 1' });  // Family Room 1
+                this.act({ role: 'lifx', cmd: 'light_off', id: 'Family Room 2' });  // Family Room 2
             }
             else if (result.answer=='sunset'){
                 seneca.log.info('Lights on')
                 this.act({ role: 'zwave', cmd: 'control_on', id: 4 });  // Front Porch
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Family Room 1' });  // Family Room 1
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Family Room 2' });  // Family Room 2
             }
         })
     }, 30000);

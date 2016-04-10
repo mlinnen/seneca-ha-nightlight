@@ -1,4 +1,5 @@
 require('seneca')()
   .use('nightlight')
-  .use('../../seneca-zwave-homegenie/zwave-control')
+  .use('../seneca-zwave-homegenie/zwave-control')
+  .use('seneca-lifx')
   .listen({host:"localhost" })
