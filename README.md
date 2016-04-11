@@ -9,9 +9,6 @@ Clone this repository into a directory of your choice and run the following comm
 npm install
 ```
 
-You will not be able to run this service unless you have the [seneca-zwave-homegenie](https://github.com/mlinnen/seneca-zwave-homegenie) plugin installed in the same directory. 
-So make sure you install this dependent plugin from github before you attempt to run this plugin.
-
 Modify the nightlight.js to change the zwave and lifx devices you want to turn on and off when sunset and sunrise does occur.
 
 ## Example

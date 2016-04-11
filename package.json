@@ -19,6 +19,7 @@
   "dependencies": {
     "seneca": "^2.0.0",
     "seneca-lifx": "0.0.1",
-    "seneca-suncalculator": "^0.1.1"
+    "seneca-suncalculator": "^0.1.1",
+    "seneca-zwave-homegenie": "0.0.1"
   }
 }
