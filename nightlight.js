@@ -15,14 +15,14 @@ module.exports = function nightlight(options) {
                 this.act({ role: 'zwave', cmd: 'control_off', id: 3 });  // Family Room Lamp
                 this.act({ role: 'zwave', cmd: 'control_off', id: 10 }); // Back Porch
                 this.act({ role: 'zwave', cmd: 'control_off', id: 4 });  // Front Porch
-                this.act({ role: 'lifx', cmd: 'light_off', id: 'Family Room 1' });  // Family Room 1
-                this.act({ role: 'lifx', cmd: 'light_off', id: 'Family Room 2' });  // Family Room 2
+                this.act({ role: 'lifx', cmd: 'light_off', id: 'Fireplace Right' });  // Fireplace Right
+                this.act({ role: 'lifx', cmd: 'light_off', id: 'Fireplace Left' });  // Fireplace Left
             }
             else if (result.answer=='sunset'){
                 seneca.log.info('Lights on')
                 this.act({ role: 'zwave', cmd: 'control_on', id: 4 });  // Front Porch
-                this.act({ role: 'lifx', cmd: 'light_on', id: 'Family Room 1' });  // Family Room 1
-                this.act({ role: 'lifx', cmd: 'light_on', id: 'Family Room 2' });  // Family Room 2
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Right' });  // Fireplace Right
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Left' });  // Fireplace Left
             }
         })
     }, 30000);
