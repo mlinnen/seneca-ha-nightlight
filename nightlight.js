@@ -4,7 +4,21 @@ module.exports = function nightlight(options) {
     var seneca = this;
     
     setInterval(function(options) {
-        seneca.act({ role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124 }, function(err, result) {
+        // Turn on the lights 30 minutes after sunset
+        seneca.act({ role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, offset: 30 }, function(err, result) {
+            if (result.answer=='none'){
+                seneca.log.debug('not time yet');
+            } 
+            else if (result.answer=='sunset'){
+                seneca.log.info('Lights on')
+                this.act({ role: 'zwave', cmd: 'control_on', id: 4 });  // Front Porch
+                this.act({ role: 'zwave', cmd: 'control_level', id: 4, level: 35 });  // Front Porch
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Right' });  // Fireplace Right
+                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Left' });  // Fireplace Left
+            }
+        })
+        // Turn off the lights 30 minutes before sunrise
+        seneca.act({ role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, offset: -30 }, function(err, result) {
             if (result.answer=='none'){
                 seneca.log.debug('not time yet');
             } 
@@ -17,12 +31,6 @@ module.exports = function nightlight(options) {
                 this.act({ role: 'zwave', cmd: 'control_off', id: 4 });  // Front Porch
                 this.act({ role: 'lifx', cmd: 'light_off', id: 'Fireplace Right' });  // Fireplace Right
                 this.act({ role: 'lifx', cmd: 'light_off', id: 'Fireplace Left' });  // Fireplace Left
-            }
-            else if (result.answer=='sunset'){
-                seneca.log.info('Lights on')
-                this.act({ role: 'zwave', cmd: 'control_on', id: 4 });  // Front Porch
-                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Right' });  // Fireplace Right
-                this.act({ role: 'lifx', cmd: 'light_on', id: 'Fireplace Left' });  // Fireplace Left
             }
         })
     }, 30000);
