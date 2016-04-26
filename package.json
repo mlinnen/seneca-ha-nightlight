@@ -18,8 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "seneca": "^2.0.0",
-    "seneca-lifx": "0.0.1",
+    "seneca-lifx": "0.1.0",
     "seneca-suncalculator": "^0.3.0",
-    "seneca-zwave-homegenie": "0.0.1"
+    "seneca-zwave-homegenie": "0.0.2"
   }
 }
